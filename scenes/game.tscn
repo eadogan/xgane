@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://da8gjwejgg84b"]
+[gd_scene load_steps=14 format=3 uid="uid://da8gjwejgg84b"]
 
 [ext_resource type="PackedScene" uid="uid://40gx21wqba2a" path="res://scenes/player.tscn" id="1_4jfxe"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_8mee5"]
 [ext_resource type="Texture2D" uid="uid://bi4bktqmq36jx" path="res://assets/sprites/world_tileset.png" id="2_u7da5"]
 [ext_resource type="PackedScene" uid="uid://bcmffs2vplncq" path="res://scenes/platform.tscn" id="3_k8q5i"]
 [ext_resource type="PackedScene" uid="uid://clyj8gmrys6yv" path="res://scenes/coin.tscn" id="4_arjme"]
@@ -191,6 +192,17 @@ _data = {
 }
 
 [node name="Game" type="Node2D"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_8mee5")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 2.0
+offset_top = -208.0
+offset_right = 79.0
+offset_bottom = -159.0
+text = "Score: 0 "
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 1)
