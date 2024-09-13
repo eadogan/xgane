@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6v8c1twp8g4o"]
+
+[ext_resource type="Script" path="res://scripts/score_display.gd" id="1_ofar8"]
+
+[node name="ScoreDisplay" type="CanvasLayer"]
+script = ExtResource("1_ofar8")
+
+[node name="coincount" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 21.0
+offset_right = 52.0
+offset_bottom = 44.0
+text = "Coins: "
+
+[node name="scorecount" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "High Score: "
