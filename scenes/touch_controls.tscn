@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://brmyv01jtaak4"]
+
+[ext_resource type="Script" path="res://scripts/touch_controls.gd" id="1_cus8b"]
+[ext_resource type="Texture2D" uid="uid://coyi7pv3wf0ks" path="res://assets/buttons/Sprites/transparent-dark/transparentDark23.png" id="1_ma8hr"]
+[ext_resource type="Texture2D" uid="uid://brs13kcvdyg3m" path="res://assets/buttons/Sprites/transparent-dark/transparentDark22.png" id="2_4fpmk"]
+[ext_resource type="Texture2D" uid="uid://b3o88jp8c0pgc" path="res://assets/buttons/Sprites/transparent-dark/transparentDark24.png" id="3_4p0ui"]
+
+[node name="TouchControls" type="CanvasLayer"]
+script = ExtResource("1_cus8b")
+
+[node name="btn_right" type="TouchScreenButton" parent="."]
+position = Vector2(1000, 500)
+texture_normal = ExtResource("1_ma8hr")
+action = "move_right"
+
+[node name="btn_left" type="TouchScreenButton" parent="."]
+position = Vector2(900, 500)
+texture_normal = ExtResource("2_4fpmk")
+action = "move_left"
+
+[node name="btn_jump" type="TouchScreenButton" parent="."]
+position = Vector2(53, 500)
+texture_normal = ExtResource("3_4p0ui")
+action = "jump"
+
+[connection signal="pressed" from="btn_right" to="." method="_on_btn_right_pressed"]
+[connection signal="released" from="btn_right" to="." method="_on_btn_right_released"]
+[connection signal="pressed" from="btn_left" to="." method="_on_btn_left_pressed"]
+[connection signal="released" from="btn_left" to="." method="_on_btn_left_released"]
+[connection signal="pressed" from="btn_jump" to="." method="_on_btn_jump_pressed"]
+[connection signal="released" from="btn_jump" to="." method="_on_btn_jump_released"]

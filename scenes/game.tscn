@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://da8gjwejgg84b"]
+[gd_scene load_steps=15 format=3 uid="uid://da8gjwejgg84b"]
 
 [ext_resource type="PackedScene" uid="uid://40gx21wqba2a" path="res://scenes/player.tscn" id="1_4jfxe"]
 [ext_resource type="Texture2D" uid="uid://bi4bktqmq36jx" path="res://assets/sprites/world_tileset.png" id="2_u7da5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://xnqw0j8kvin3" path="res://scenes/killzone.tscn" id="5_ggtbf"]
 [ext_resource type="PackedScene" uid="uid://c5jor4rxynkdu" path="res://scenes/slime.tscn" id="6_pqurr"]
 [ext_resource type="PackedScene" uid="uid://b6v8c1twp8g4o" path="res://scenes/score_display.tscn" id="8_ndbor"]
+[ext_resource type="PackedScene" uid="uid://brmyv01jtaak4" path="res://scenes/touch_controls.tscn" id="8_nyh7t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ncxin"]
 texture = ExtResource("2_u7da5")
@@ -272,3 +273,11 @@ position = Vector2(267, 5)
 
 [node name="Slime" parent="." instance=ExtResource("6_pqurr")]
 position = Vector2(345, 32)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TouchControls" parent="Control" instance=ExtResource("8_nyh7t")]
